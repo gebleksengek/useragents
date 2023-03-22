@@ -27,6 +27,10 @@ func init() {
 }
 
 func random(list []string) string {
+	if len(list) <= 0 {
+		return ""
+	}
+
 	return list[rand.Intn(len(list))]
 }
 
@@ -65,11 +69,11 @@ func Chrome() string {
 
 // Generate a chrome based user-agent with the latest version
 func ChromeLatest() string {
-	if len(List.Chrome) > 0 {
-		return List.Chrome[0]
+	if len(List.Chrome) <= 0 {
+		return ""
 	}
 
-	return ""
+	return List.Chrome[0]
 }
 
 // Generate a edge based user-agent
@@ -79,11 +83,11 @@ func Edge() string {
 
 // Generate a edge based user-agent with the latest version
 func EdgeLatest() string {
-	if len(List.Edge) > 0 {
-		return List.Edge[0]
+	if len(List.Edge) <= 0 {
+		return ""
 	}
 
-	return ""
+	return List.Edge[0]
 }
 
 // Generate a firefox based user-agent
@@ -93,11 +97,11 @@ func Firefox() string {
 
 // Generate a firefox based user-agent with the latest version
 func FirefoxLatest() string {
-	if len(List.Firefox) > 0 {
-		return List.Firefox[0]
+	if len(List.Firefox) <= 0 {
+		return ""
 	}
 
-	return ""
+	return List.Firefox[0]
 }
 
 // Generate a safari based user-agent
@@ -107,9 +111,9 @@ func Safari() string {
 
 // Generate a safari based user-agent with the latest version
 func SafariLatest() string {
-	if len(List.Safari) > 0 {
-		return List.Safari[0]
+	if len(List.Safari) <= 0 {
+		return ""
 	}
 
-	return ""
+	return List.Safari[0]
 }

@@ -54,11 +54,24 @@ func Test_random(t *testing.T) {
 				list: List.Safari,
 			},
 		},
+		{
+			name: "404",
+			args: args{
+				list: []string{},
+			},
+		},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := random(tt.args.list)
+
+			if len(tt.args.list) <= 0 {
+				if got != "" {
+					t.Errorf("random() = return not \"\"")
+				}
+				return
+			}
 
 			if !contains(tt.args.list, got) {
 				t.Errorf("random() = slice not contain %v", got)
